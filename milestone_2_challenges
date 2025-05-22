@@ -32,3 +32,155 @@ for (let i = 1; i = arr.lenth; i++)  [
 return max;
 console.log(findMax({5, 8, 3, 9}));
 console.log(findMax({-3, -6, -8, -2}));
+
+//Challenge 3;Finding an election winner
+function findWinner(candidates) {
+  if (!Array.isArray(candidates)) {
+    return "Input must be an array";
+  }
+  if (candidates.length === 0) {
+    return "Array cannot be empty";
+  }
+  let winner = candidates[0];
+  for (let i = 1; i < candidates.length; i++) {
+    if (candidates[i].votes > winner.votes) {
+      winner = candidates[i];
+    }
+  }
+  
+  return winner;
+}
+const candidates = [
+  { name: "Alice", votes: 50 },
+  { name: "Sam", votes: 75 },
+  { name: "Faith", votes: 65 }
+];
+console.log(findWinner(candidates));
+const candidates2 = [
+  { name: "Angel", votes: 120 },
+  { name: "Jane", votes: 95 },
+  { name: "Marcus", votes: 150 },
+  { name: "Zedd", votes: 80 }
+];
+console.log(findWinner(candidates2));
+const singleCandidate = [{ name: "Winner", votes: 100 }];
+console.log(findWinner(singleCandidate));
+
+//Challenge 4; Finding longest word
+function findLongestWord(words) {
+  if (!Array.isArray(words)) {
+    return "Input must be an array";
+  }
+  if (words.length === 0) {
+    return "Array cannot be empty";
+  }
+  let longestWord = words[0];
+  for (let i = 1; i < words.length; i++) {
+    if (words[i].length > longestWord.length) {
+      longestWord = words[i];
+    }
+  }
+  return longestWord;
+}
+
+findLongestWordindLongestWord(["apple", "banana", "pear", "grapefruit"]);
+console.log(findLongestWord(["cat", "dog", "elephant", "bird"]));
+
+//Challenge 5;Counting properties
+function countProperties(obj) {  
+  if (typeof obj !== 'object' || obj === null || Array.isArray(obj)) {
+    return "Input must be an object";
+  }
+  let count = 0;
+  for (let key in obj) {
+  if (obj.hasOwnProperty(key)) {
+      count++;
+    }
+  }
+  return count;
+}
+console.log(countProperties({ a: 1, b: 2, c: 3, d: 4, e: 5 }));
+
+//Challenge 6; Filter by length
+function filterByLength(strings, minLength) {
+  if (!Array.isArray(strings)) {
+    return "First argument must be an array";
+  }
+  if (typeof minLength !== 'number') {
+    return "Second argument must be a number";
+  }
+  
+  const result = [];
+  for (let i = 0; i < strings.length; i++) {
+    if (typeof strings[i] === 'string' && strings[i].length >= minLength) {
+      result.push(strings[i]);
+    }
+  }
+   return result;
+}
+console.log(filterByLength(["short", "tiny", "big"], 10))
+
+//Challenge 7; Finding sum of even numbers
+function sumEvenNumbers(numbers) {
+  if (!Array.isArray(numbers)) {
+    return "Input must be an array";
+  } 
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+  if (typeof numbers[i] === 'number' && numbers[i] % 2 === 0) {
+      sum += numbers[i];
+    }
+  }
+  return sum;
+}
+console.log(sumEvenNumbers([1, 3, 5, 7, 9]));
+console.log(sumEvenNumbers([-4, -2, 0, 2, 4]));
+
+//Challenge 8;Finding difference between even and odd numbers
+function differenceEvenOdd(numbers) {
+  if (!Array.isArray(numbers)) {
+    return "Input must be an array";
+  } 
+  let evenSum = 0;
+  let oddSum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    if (typeof numbers[i] === 'number') {
+    if (numbers[i] % 2 === 0) {
+        evenSum += numbers[i];
+      } else {
+        oddSum += numbers[i];
+      }
+    }
+  }
+  return evenSum - oddSum;
+}
+console.log(differenceEvenOdd([1, 5, 7]));
+console.log(differenceEvenOdd([-6, -8, 0, 8, 6]));
+
+//Challenge 9; Count truthy values
+function countTruthy(obj) {
+  if (typeof obj !== 'object' || obj === null || Array.isArray(obj)) {
+    return "Input must be an object";
+  }
+  let count = 0;
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      if (obj[key]) {
+        count++;
+      }
+    }
+  }
+   return count;
+}
+console.log(countTruthy({}));
+console.log(countTruthy({ arr: [1, 2, 3], obj: {}, func: function() {} }));
+
+//Challenge 10;Finding average of numbers
+function average(numbers) {
+  if (numbers.length === 0) return 0;
+   const sum = numbers.reduce((acc, num) => acc + num, 0);
+  return sum / numbers.length;
+}
+console.log(average([2, 4, 6, 8]));
+console.log(average([]));
+
