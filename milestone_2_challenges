@@ -184,3 +184,48 @@ function average(numbers) {
 console.log(average([2, 4, 6, 8]));
 console.log(average([]));
 
+//Challenge 11; Linear search
+function linearSearch(arr, value) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === value) {
+      return i;
+    }
+  }
+  return -1;
+}
+console.log(linearSearch([5, 3, 7, 1, 4], 10));
+
+//Challenge 12; Reverse linear search
+function reverseLinearSearch(arr, value) {
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] === value) {
+      return i;
+    }
+  }
+  return -1;
+}
+console.log(reverseLinearSearch([5, 3, 7, 1, 4], 10));
+
+//Challenge 13; Linear search all indices
+function linearSearchAll(arr, value) {
+  const indices = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === value) {
+      indices.push(i);
+    }
+  }
+return indices;
+}
+console.log(linearSearchAll([5, 3, 7, 1, 4], 10));
+
+//Challenge 14; Count the occurences
+function countOccurrences(arr) {
+  const counts = {};
+
+  for (let str of arr) {
+    counts[str] = (counts[str] || 0) + 1;
+  }
+return counts;
+}
+console.log(countOccurrences(["apple", "banana", "apple", "orange", "banana", "apple"]));
