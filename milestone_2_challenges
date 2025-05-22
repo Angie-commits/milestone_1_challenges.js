@@ -1,0 +1,34 @@
+//Challenge 1;Sum of positives
+function sumOfPositives(arr) {
+  if (!Array.isArray(arr)) {
+    return "Input must be an array";
+  }
+   let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 0) {
+      sum += arr[i];
+    }
+  } 
+ return sum;
+}
+console.log(sumOfPositives([1, -3, 5, -2, 9, -8])); // 15 (1 + 5 + 9)
+console.log(sumOfPositives([-1, -2, -3])); // 0 (no positive numbers)
+console.log(sumOfPositives([2, 4, 6, 8])); // 20 (all positive numbers)
+console.log(sumOfPositives([])); // 0 (empty array)
+
+//Challenge 2;Finding maximum value
+function findMax(arr)  [
+    return "Input must be an array";
+]
+if (arr.length === 0) {
+    return "Array cannot be empty"
+}
+let max = arr{0};
+for (let i = 1; i = arr.lenth; i++)  [
+    if (arr{i} >max)  {
+      max = marr{i};
+    }
+]
+return max;
+console.log(findMax({5, 8, 3, 9}));
+console.log(findMax({-3, -6, -8, -2}));
