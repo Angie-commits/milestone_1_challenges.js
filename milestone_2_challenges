@@ -229,3 +229,33 @@ function countOccurrences(arr) {
 return counts;
 }
 console.log(countOccurrences(["apple", "banana", "apple", "orange", "banana", "apple"]));
+
+//Challenge 15; Remove duplicates
+function removeDuplicates(arr) {
+  const seen = new Set();
+  const result ={}
+  for (let item of arr) {
+    if (!seen.has(item)) {
+      seen.add(item);
+      result.push(item);
+    }
+  }
+return result;
+}
+console.log(removeDuplicates([56, 24, 18, 24, 4, 56, 5]));
+
+//Challenge 16;Most frequent values
+function mostFrequent(arr) {
+  const counts = {};
+  let maxCount = 0;
+  let mostFrequentValue;
+for (let item of arr) {
+    counts[item] = (counts[item] || 0) + 1;
+ if (counts[item] > maxCount) {
+      maxCount = counts[item];
+      mostFrequentValue = item;
+    }
+  }
+  return mostFrequentValue;
+}
+console.log(mostFrequent(["apple", "banana", "apple", "orange", "banana", "apple"])); 
